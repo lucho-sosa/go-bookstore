@@ -1,8 +1,7 @@
 package config
 
 import (
-	// import gorm 
- "github.com/jinzhu/gorm/"
+ "github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
@@ -11,9 +10,9 @@ var (
 )
 
 func Connect() {
-	d, err := gorm.Open("mysql", "root:lucho90@/golang?charset=utf8&parseTime=True&loc=Local")
+	d, err := gorm.Open("mysql", "lucho:Lucho90.11@/golang?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
-		panic("failed to connect database")
+		panic(err)
 	}
 
 	db = d
